@@ -1,0 +1,12 @@
+{
+    "states": [
+        {
+            "state": "Berlin",
+            "capital": "Berlin"
+        },
+        {
+            "state": "Thüringen",
+            "capital": "Erfurt"
+        }
+    ]
+}

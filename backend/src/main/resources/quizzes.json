@@ -1,0 +1,10 @@
+{
+    "quizes": [
+        {
+            "name": "German states and their capitals",
+            "prompt": "state",
+            "answer": "capital",
+            "file": "german-states.json"
+        }
+    ]
+}
