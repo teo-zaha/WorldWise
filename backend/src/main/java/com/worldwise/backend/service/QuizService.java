@@ -1,9 +1,12 @@
-package com.worldwise.backend;
+package com.worldwise.backend.service;
 
 import java.io.IOException;
 import java.util.List;
 
 import com.fasterxml.jackson.core.type.TypeReference;
+import com.worldwise.backend.dto.QuizDto;
+import com.worldwise.backend.model.Question;
+import com.worldwise.backend.model.Quiz;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.Resource;
@@ -18,10 +21,11 @@ public class QuizService {
 
     // Read quizzes.json file and return a list of Quiz objects
     // You can use Jackson library to parse JSON to Java objects
-    public List<Quiz> getQuizzes() {
+    public List<QuizDto> getQuizzes() {
         ObjectMapper mapper = new ObjectMapper();
         try {
-            return mapper.readValue(quizzesResource.getInputStream(), new TypeReference<List<Quiz>>() {});
+            return mapper.readValue(quizzesResource.getInputStream(), new TypeReference<>() {
+            });
         } catch (IOException e) {
             throw new RuntimeException("Error: Quiz list could not get mapped properly");
         }
