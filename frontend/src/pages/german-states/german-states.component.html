@@ -6,9 +6,9 @@
         </div>
         <div class="grid-tile">
             <form>
-                <input type="text" id="answer" placeholder="{{ answer }}">
+                <input type="text" id="answer" [(ngModel)]="userAnswer" placeholder="{{ answer }}" (keydown.enter)="checkAnswer()">
+                <span [ngClass]="{'error': !isAnswerCorrect}">Incorrect, try again!</span>
             </form>
         </div>
     </div>
 </div>
-
